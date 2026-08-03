@@ -70,7 +70,6 @@ Built after completing Jeremy's IT Lab CCNA course, as a way to go beyond guided
 These were investigated and confirmed as **Packet Tracer limitations, not configuration errors** — documented here for transparency:
 
 - **OSPF SPF recalculation bug** — when two multilayer switches advertise the same VLAN subnet at equal OSPF cost (a normal HSRP pattern), Packet Tracer's SPF process intermittently fails to recompute the routing table correctly, even though the LSA database shows correct data. Confirmed via LSA database inspection, not just `show ip route`.
-- **HSRP virtual IP does not reliably answer NTP** — pinging the HSRP VIP works, but NTP client requests addressed to the VIP go unanswered in the simulator. Worked around by pointing NTP clients directly at each core switch's real interface IP instead of the VIP.
 
 ---
 
